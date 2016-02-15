@@ -29,7 +29,7 @@ public class NewsView extends Grid3x3ViewBase {
         Button navigateToPrivatePage = new Button("Accounts");
         Button sendNotificationBtn = new Button("Send notification");
         navigateToContactUsBtn.addClickListener(c -> navigator.navigateTo("contact-us"));
-        navigateToPrivatePage.addClickListener(c -> navigator.navigateTo("private/finance-department/accounts"));
+        navigateToPrivatePage.addClickListener(c -> navigator.navigateTo("finance/accounts"));
         sendNotificationBtn.addClickListener((c -> userNotifier.notifyError(LabelKey.Do_Not_do_That)));
         setCentreCell(new VerticalLayout(navigateToContactUsBtn, navigateToPrivatePage, sendNotificationBtn));
     }
