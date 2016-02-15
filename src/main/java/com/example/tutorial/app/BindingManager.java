@@ -6,6 +6,7 @@ import com.example.tutorial.pages.MyOtherPages;
 import com.example.tutorial.pages.MyPages;
 import com.example.tutorial.pages.MyPublicPages;
 import com.google.inject.Module;
+import uk.q3c.krail.core.config.ApplicationConfigurationModule;
 import uk.q3c.krail.core.guice.DefaultBindingManager;
 import uk.q3c.krail.core.navigate.sitemap.SystemAccountManagementPages;
 import uk.q3c.krail.core.ui.DefaultUIModule;
@@ -37,5 +38,11 @@ public class BindingManager extends DefaultBindingManager {
     protected Module uiModule() {
         return new DefaultUIModule().uiClass(TutorialUI.class)
                                     .applicationTitleKey(LabelKey.Krail_Tutorial);
+    }
+
+    @Override
+    protected Module applicationConfigurationModule() {
+        return new ApplicationConfigurationModule().addConfig("moreConfig.ini", 98, false)
+                                                   .addConfig("essential.ini", 99, true);
     }
 }
