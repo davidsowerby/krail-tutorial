@@ -1,6 +1,7 @@
 package com.example.tutorial.app;
 
 import com.example.tutorial.i18n.LabelKey;
+import com.example.tutorial.i18n.TutorialI18NModule;
 import com.example.tutorial.pages.AnnotatedPagesModule;
 import com.example.tutorial.pages.MyOtherPages;
 import com.example.tutorial.pages.MyPages;
@@ -52,5 +53,10 @@ public class BindingManager extends DefaultBindingManager {
     protected Module shiroModule() {
         return new DefaultShiroModule().addRealm(TutorialRealm.class)
                                        .enableCache();
+    }
+
+    @Override
+    protected Module i18NModule() {
+        return new TutorialI18NModule();
     }
 }
