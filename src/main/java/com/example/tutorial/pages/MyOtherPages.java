@@ -13,5 +13,7 @@ public class MyOtherPages extends DirectSitemapModule {
     protected void define() {
         addEntry("private/my-news", MyNews.class, LabelKey.My_News, PageAccessControl.PERMISSION);
         addEntry("ini-config", IniConfigView.class, LabelKey.Ini_Config, PageAccessControl.PUBLIC);
+        addEntry("i18n", I18NDemoView.class, LabelKey.I18N, PageAccessControl.PUBLIC);
+
     }
 }

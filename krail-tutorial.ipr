@@ -82,6 +82,7 @@
             <element id="library" level="project" name="Gradle: rhino:js:1.7R2" />
             <element id="library" level="project" name="Gradle: javax.inject:javax.inject:1" />
             <element id="library" level="project" name="Gradle: aopalliance:aopalliance:1.0" />
+            <element id="file-copy" path="$USER_HOME$/gradle/caches/modules-2/files-2.1/javax.persistence/persistence-api/1.0.2/8a7f96961047da52a53b7347b6a919c6fbc6d7fa/persistence-api-1.0.2.jar" />
           </element>
         </element>
         <element id="directory" name="META-INF">
@@ -170,6 +171,7 @@
             <element id="library" level="project" name="Gradle: rhino:js:1.7R2" />
             <element id="library" level="project" name="Gradle: javax.inject:javax.inject:1" />
             <element id="library" level="project" name="Gradle: aopalliance:aopalliance:1.0" />
+            <element id="file-copy" path="$USER_HOME$/gradle/caches/modules-2/files-2.1/javax.persistence/persistence-api/1.0.2/8a7f96961047da52a53b7347b6a919c6fbc6d7fa/persistence-api-1.0.2.jar" />
           </element>
         </element>
         <element id="directory" name="META-INF">
@@ -525,6 +527,15 @@
       <JAVADOC />
       <SOURCES>
         <root url="jar://$USER_HOME$/gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/a00123f261762a7c5e0ec916a2c7c8298d29c400/javax.inject-1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: javax.persistence:persistence-api:1.0.2">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/gradle/caches/modules-2/files-2.1/javax.persistence/persistence-api/1.0.2/8a7f96961047da52a53b7347b6a919c6fbc6d7fa/persistence-api-1.0.2.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/gradle/caches/modules-2/files-2.1/javax.persistence/persistence-api/1.0.2/eb8ae77be88577b23e64ce1e5386e874b08b49cc/persistence-api-1.0.2-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Gradle: javax.servlet:javax.servlet-api:3.1.0">
