@@ -1,3 +1,3 @@
 #Krail Tutorial
 
-This tutorial is in the process of being rebuilt - it should be complete by the end of the 15th Feb. (UK time).  But then again it may be the 16th ...
+This tutorial has been rebuilt for Krail 0.9.9, but that has not been released yet.  There is a [push bug](https://github.com/davidsowerby/krail/issues/527) which would ideally be resolved first, but may not be

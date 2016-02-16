@@ -1,6 +1,7 @@
 package com.example.tutorial.app;
 
 import com.google.inject.Inject;
+import com.vaadin.annotations.Push;
 import com.vaadin.annotations.Theme;
 import com.vaadin.data.util.converter.ConverterFactory;
 import com.vaadin.server.ErrorHandler;
@@ -17,6 +18,7 @@ import uk.q3c.krail.core.user.notify.VaadinNotification;
 import uk.q3c.krail.core.view.component.*;
 
 @Theme("valo")
+@Push
 public class TutorialUI extends DefaultApplicationUI {
 
     @Inject

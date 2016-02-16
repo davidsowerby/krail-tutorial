@@ -25,4 +25,8 @@ public abstract class MessageReceiver extends Panel {
         String s = getText();
         textField.setValue(s + "\n" + tutorialMessage.getMsg());
     }
+
+    public TextArea getTextField() {
+        return textField;
+    }
 }
