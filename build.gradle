@@ -10,8 +10,7 @@ repositories {
 
 dependencies {
     // remember to update the Vaadin version below if this version is changed
-    compile(group: 'uk.q3c.krail', name: 'krail', version: '0.9.9')
-    compile 'javax.persistence:persistence-api:1.0.2'
+    compile 'uk.q3c.krail:krail-jpa:0.9.3'
 }
 
 vaadin {

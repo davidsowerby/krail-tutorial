@@ -2,6 +2,8 @@ package com.example.tutorial.app;
 
 import com.example.tutorial.i18n.LabelKey;
 import com.example.tutorial.i18n.TutorialI18NModule;
+import com.example.tutorial.jpa.DerbyJpa;
+import com.example.tutorial.jpa.TutorialJpaModule;
 import com.example.tutorial.pages.AnnotatedPagesModule;
 import com.example.tutorial.pages.MyOtherPages;
 import com.example.tutorial.pages.MyPages;
@@ -11,6 +13,8 @@ import com.google.inject.Module;
 import uk.q3c.krail.core.config.ApplicationConfigurationModule;
 import uk.q3c.krail.core.guice.DefaultBindingManager;
 import uk.q3c.krail.core.navigate.sitemap.SystemAccountManagementPages;
+import uk.q3c.krail.core.option.OptionModule;
+import uk.q3c.krail.core.persist.clazz.i18n.ClassPatternSource;
 import uk.q3c.krail.core.shiro.DefaultShiroModule;
 import uk.q3c.krail.core.ui.DefaultUIModule;
 
@@ -57,6 +61,18 @@ public class BindingManager extends DefaultBindingManager {
 
     @Override
     protected Module i18NModule() {
-        return new TutorialI18NModule();
+        return new TutorialI18NModule().source(DerbyJpa.class)
+                                       .source(ClassPatternSource.class);
+    }
+
+    @Override
+    protected void addPersistenceModules(List<Module> modules) {
+        super.addPersistenceModules(modules);
+        modules.add(new TutorialJpaModule());
+    }
+
+    @Override
+    protected Module optionModule() {
+        return new OptionModule().activeSource(DerbyJpa.class);
     }
 }

@@ -16,6 +16,17 @@
         </sourceRoots>
       </configuration>
     </facet>
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <setting name="provider-name" value="" />
+        <datasource-mapping>
+          <factory-entry name="derbyDb" />
+          <factory-entry name="hsqlDb" />
+        </datasource-mapping>
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/build/classes/main" />
@@ -101,7 +112,15 @@
     <orderEntry type="library" name="Gradle: rhino:js:1.7R2" level="project" />
     <orderEntry type="library" name="Gradle: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" name="Gradle: aopalliance:aopalliance:1.0" level="project" />
-    <orderEntry type="library" name="Gradle: javax.persistence:persistence-api:1.0.2" level="project" />
+    <orderEntry type="library" name="Gradle: uk.q3c.krail:krail-jpa:0.9.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.hsqldb:hsqldb:2.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.derby:derby:10.11.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.persistence:eclipselink:2.6.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.vaadin.addon:jpacontainer:3.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: javax.transaction:jta:1.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.persistence:javax.persistence:2.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.persistence:commonj.sdo:2.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.glassfish:javax.json:1.0.4" level="project" />
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">
     <option name="_basePreferences">
