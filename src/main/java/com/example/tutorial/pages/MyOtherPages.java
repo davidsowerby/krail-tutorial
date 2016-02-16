@@ -17,6 +17,7 @@ public class MyOtherPages extends DirectSitemapModule {
         addEntry("jpa", JpaView.class, LabelKey.JPA, PageAccessControl.PUBLIC);
         addEntry("jpa/option", JpaOptionView.class, LabelKey.Options, PageAccessControl.PUBLIC);
         addEntry("events", EventsView.class, LabelKey.Events, PageAccessControl.PERMISSION);
+        addEntry("services", ServicesView.class, LabelKey.Services, PageAccessControl.PUBLIC);
 
     }
 }

@@ -8,6 +8,7 @@ import com.example.tutorial.pages.AnnotatedPagesModule;
 import com.example.tutorial.pages.MyOtherPages;
 import com.example.tutorial.pages.MyPages;
 import com.example.tutorial.pages.MyPublicPages;
+import com.example.tutorial.service.TutorialServicesModule;
 import com.example.tutorial.uac.TutorialRealm;
 import com.google.inject.Module;
 import uk.q3c.krail.core.config.ApplicationConfigurationModule;
@@ -24,7 +25,7 @@ public class BindingManager extends DefaultBindingManager {
 
     @Override
     protected void addAppModules(List<Module> baseModules) {
-
+        baseModules.add(new TutorialServicesModule());
     }
 
     @Override
@@ -75,4 +76,6 @@ public class BindingManager extends DefaultBindingManager {
     protected Module optionModule() {
         return new OptionModule().activeSource(DerbyJpa.class);
     }
+
+
 }
