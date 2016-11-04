@@ -17,17 +17,17 @@ import uk.q3c.krail.core.view.component.ViewChangeBusMessage;
 public class EventsView extends Grid3x3ViewBase {
     private final UIBusProvider uiBusProvider;
     private final GlobalBusProvider globalBusProvider;
-    private Broadcaster broadcaster;
+    private final Broadcaster broadcaster;
+    private final SessionBusProvider sessionBusProvider;
+    private final GlobalMessageReceiver singletonMessageReceiver;
+    private final MessageReceiver sessionMessageReceiver;
+    private final MessageReceiver uiMessageReceiver;
     @Caption(caption = LabelKey.Singleton, description = DescriptionKey.Singleton)
     private Button singletonSendBtn;
     @Caption(caption = LabelKey.Session, description = DescriptionKey.Session)
     private Button sessionSendBtn;
     @Caption(caption = LabelKey.UI, description = DescriptionKey.UI)
     private Button uiSendBtn;
-    private SessionBusProvider sessionBusProvider;
-    private GlobalMessageReceiver singletonMessageReceiver;
-    private MessageReceiver sessionMessageReceiver;
-    private MessageReceiver uiMessageReceiver;
 
 
     @Inject
@@ -65,20 +65,20 @@ public class EventsView extends Grid3x3ViewBase {
             String m = "Singleton";
             globalBusProvider.get()
                              .publish(new TutorialMessage(m, this));
-            broadcaster.broadcast("refresh", m);
+            broadcaster.broadcast("refresh", m, getRootComponent());
 
         });
         sessionSendBtn.addClickListener(click -> {
             String m = "Session";
             sessionBusProvider.get()
                               .publish(new TutorialMessage(m, this));
-            broadcaster.broadcast("refresh", m);
+            broadcaster.broadcast("refresh", m, getRootComponent());
         });
         uiSendBtn.addClickListener(click -> {
             String m = "UI";
             uiBusProvider.get()
                          .publish(new TutorialMessage(m, this));
-            broadcaster.broadcast("refresh", m);
+            broadcaster.broadcast("refresh", m, getRootComponent());
         });
         setTopLeft(singletonSendBtn);
         setMiddleLeft(sessionSendBtn);

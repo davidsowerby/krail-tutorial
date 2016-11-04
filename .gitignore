@@ -1,5 +1,6 @@
 bin
-build
+build/*
 classes
 .gradle
 .idea
+webapp/VAADIN
