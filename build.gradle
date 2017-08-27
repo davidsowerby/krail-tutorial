@@ -1,0 +1,35 @@
+plugins {
+    id "com.devsoap.plugin.vaadin" version "1.2.3"
+    id 'eclipse-wtp'
+    id 'idea'
+}
+
+vaadin {
+    version = '7.7.10' // This version should match that used by the version of Krail you are using
+    logToConsole = true
+}
+
+vaadinCompile {
+    widgetset 'com.example.tutorial.widgetset.tutorialWidgetset'
+}
+
+sourceCompatibility = '1.8'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile(group: 'uk.q3c.krail', name: 'krail', version: '0.10.0.0')
+}
+
+configurations.all {
+    resolutionStrategy {
+        // GWT requires an old version of the validation API.  Changing to a newer version breaks widgetset compile but throws no errors
+        force 'javax.validation:validation-api:1.0.0.GA'
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.1'
+}
