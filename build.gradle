@@ -1,4 +1,8 @@
-apply from: 'http://plugins.jasoft.fi/vaadin-groovy.plugin?version=0.10.6'
+plugins {
+    id "com.devsoap.plugin.vaadin" version "1.2.0"
+}
+
+
 apply plugin: 'eclipse-wtp'
 apply plugin: 'idea'
 
@@ -15,8 +19,8 @@ dependencies {
 
 vaadin {
     version = '7.6.2' // see issue https://github.com/davidsowerby/krail/issues/528
-    widgetset 'com.example.tutorial.widgetset.tutorialWidgetset'
-    plugin.logToConsole = true
+//    widgetset 'com.example.tutorial.widgetset.tutorialWidgetset'
+    logToConsole = true
 }
 
 configurations.all {
