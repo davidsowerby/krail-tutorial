@@ -12,5 +12,6 @@ public class MyOtherPages extends DirectSitemapModule {
     @Override
     protected void define() {
         addEntry("private/my-news", MyNews.class, LabelKey.My_News, PageAccessControl.PERMISSION);
+        addEntry("ini-config", IniConfigView.class, LabelKey.Ini_Config, PageAccessControl.PUBLIC);
     }
 }
