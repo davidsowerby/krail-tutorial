@@ -5,10 +5,12 @@ import com.example.tutorial.pages.AnnotatedPagesModule;
 import com.example.tutorial.pages.MyOtherPages;
 import com.example.tutorial.pages.MyPages;
 import com.example.tutorial.pages.MyPublicPages;
+import com.example.tutorial.uac.TutorialRealm;
 import com.google.inject.Module;
 import uk.q3c.krail.core.config.KrailApplicationConfigurationModule;
 import uk.q3c.krail.core.guice.DefaultBindingManager;
 import uk.q3c.krail.core.navigate.sitemap.SystemAccountManagementPages;
+import uk.q3c.krail.core.shiro.DefaultShiroModule;
 import uk.q3c.krail.core.sysadmin.SystemAdminPages;
 import uk.q3c.krail.core.ui.DefaultUIModule;
 
@@ -29,7 +31,7 @@ public class BindingManager extends DefaultBindingManager {
     @Override
     protected void addSitemapModules(List<Module> baseModules) {
         baseModules.add(new SystemAccountManagementPages());
-        baseModules.add(new MyPages().rootURI("private/finance-department"));
+        baseModules.add(new MyPages().rootURI("finance"));
         baseModules.add(new AnnotatedPagesModule());
         baseModules.add(new SystemAdminPages());
         baseModules.add(new MyPublicPages());
@@ -47,5 +49,10 @@ public class BindingManager extends DefaultBindingManager {
                 .addConfig("moreConfig.ini", 98, false)
                 .addConfig("essential.ini", 99, true)
                 .addConfig("krail.ini", 100, true);
+    }
+
+    @Override
+    protected Module shiroModule() {
+        return new DefaultShiroModule().addRealm(TutorialRealm.class).enableCache();
     }
 }

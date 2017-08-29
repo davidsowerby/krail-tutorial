@@ -6,7 +6,7 @@ import uk.q3c.krail.core.shiro.PageAccessControl;
 import uk.q3c.krail.core.view.Grid3x3ViewBase;
 import uk.q3c.krail.i18n.Translate;
 
-@View(uri = "private/finance-department/purchasing", pageAccessControl = PageAccessControl.PERMISSION, labelKeyName = "Purchasing")
+@View(uri = "finance/purchasing", pageAccessControl = PageAccessControl.PERMISSION, labelKeyName = "Purchasing")
 public class PurchasingView extends Grid3x3ViewBase {
 
     @Inject
