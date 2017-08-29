@@ -10,5 +10,11 @@ public class TutorialLabels_de extends EnumResourceBundle<TutorialLabelKey> {
         put(is_selected, "aktiviert ist");
         put(is_not_selected, "nicht aktiviert ist");
         put(Options, "die Optionen");
+        put(News, "Nachrichten");
+        put(Last_Name, "Nachname");
+        put(First_Name, "Vorname");
+        put(No, "Nein");
+        put(Yes, "Ja");
+
     }
 }
