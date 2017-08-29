@@ -1,6 +1,6 @@
 package com.example.tutorial.pages;
 
-import com.example.tutorial.i18n.LabelKey;
+import com.example.tutorial.i18n.TutorialLabelKey;
 import uk.q3c.krail.core.navigate.sitemap.DirectSitemapModule;
 import uk.q3c.krail.core.shiro.PageAccessControl;
 
@@ -12,8 +12,8 @@ public class MyPublicPages extends DirectSitemapModule {
 
     @Override
     protected void define() {
-        addEntry("news", NewsView.class, LabelKey.News, PageAccessControl.PUBLIC);
-        addEntry("contact-us", ContactUsView.class, LabelKey.Contact_Us, PageAccessControl.PUBLIC);
-        addEntry("contact-us/contact-detail", ContactDetailView.class, LabelKey.Contact_Detail, PageAccessControl.PUBLIC, -1);
+        addEntry("news", NewsView.class, TutorialLabelKey.News, PageAccessControl.PUBLIC);
+        addEntry("contact-us", ContactUsView.class, TutorialLabelKey.Contact_Us, PageAccessControl.PUBLIC);
+        addEntry("contact-us/contact-detail", ContactDetailView.class, TutorialLabelKey.Contact_Detail, PageAccessControl.PUBLIC, -1);
     }
 }

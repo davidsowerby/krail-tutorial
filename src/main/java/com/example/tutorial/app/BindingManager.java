@@ -1,6 +1,7 @@
 package com.example.tutorial.app;
 
-import com.example.tutorial.i18n.LabelKey;
+import com.example.tutorial.i18n.TutorialI18NModule;
+import com.example.tutorial.i18n.TutorialLabelKey;
 import com.example.tutorial.pages.AnnotatedPagesModule;
 import com.example.tutorial.pages.MyOtherPages;
 import com.example.tutorial.pages.MyPages;
@@ -40,7 +41,7 @@ public class BindingManager extends DefaultBindingManager {
 
     @Override
     protected Module uiModule() {
-        return new DefaultUIModule().uiClass(TutorialUI.class).applicationTitleKey(LabelKey.Krail_Tutorial);
+        return new DefaultUIModule().uiClass(TutorialUI.class).applicationTitleKey(TutorialLabelKey.Krail_Tutorial);
     }
 
     @Override
@@ -54,5 +55,10 @@ public class BindingManager extends DefaultBindingManager {
     @Override
     protected Module shiroModule() {
         return new DefaultShiroModule().addRealm(TutorialRealm.class).enableCache();
+    }
+
+    @Override
+    protected Module i18NModule() {
+        return new TutorialI18NModule();
     }
 }

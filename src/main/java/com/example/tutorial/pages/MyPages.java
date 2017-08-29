@@ -1,6 +1,6 @@
 package com.example.tutorial.pages;
 
-import com.example.tutorial.i18n.LabelKey;
+import com.example.tutorial.i18n.TutorialLabelKey;
 import uk.q3c.krail.core.navigate.sitemap.DirectSitemapModule;
 import uk.q3c.krail.core.shiro.PageAccessControl;
 
@@ -12,11 +12,11 @@ public class MyPages extends DirectSitemapModule {
 
     @Override
     protected void define() {
-        addEntry("", FinanceView.class, LabelKey.Finance,
+        addEntry("", FinanceView.class, TutorialLabelKey.Finance,
                 PageAccessControl.PERMISSION);
-        addEntry("accounts", AccountsView.class, LabelKey.Accounts,
+        addEntry("accounts", AccountsView.class, TutorialLabelKey.Accounts,
                 PageAccessControl.PERMISSION);
-        addEntry("payroll", PayrollView.class, LabelKey.Payroll,
+        addEntry("payroll", PayrollView.class, TutorialLabelKey.Payroll,
                 PageAccessControl.PERMISSION);
     }
 }

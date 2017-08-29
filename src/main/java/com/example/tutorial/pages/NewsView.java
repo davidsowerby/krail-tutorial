@@ -1,6 +1,6 @@
 package com.example.tutorial.pages;
 
-import com.example.tutorial.i18n.LabelKey;
+import com.example.tutorial.i18n.TutorialLabelKey;
 import com.google.inject.Inject;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.VerticalLayout;
@@ -30,7 +30,7 @@ public class NewsView extends Grid3x3ViewBase {
         Button sendNotificationBtn = new Button("Send notification");
         navigateToContactUsBtn.addClickListener(c -> navigator.navigateTo("contact-us"));
         navigateToPrivatePage.addClickListener(c -> navigator.navigateTo("finance/accounts"));
-        sendNotificationBtn.addClickListener((c -> userNotifier.notifyError(LabelKey.Do_Not_do_That)));
+        sendNotificationBtn.addClickListener((c -> userNotifier.notifyError(TutorialLabelKey.Do_Not_do_That)));
         setCentreCell(new VerticalLayout(navigateToContactUsBtn, navigateToPrivatePage, sendNotificationBtn));
     }
 }
